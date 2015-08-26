@@ -6,13 +6,13 @@ var initializer = {
             language_changer = document.getElementById('language-change');
 
         //check cookies, jezeli sa, #guide.hidden : V
-        var today = new Date();
+        // var today = new Date();
 
-        // var testObject = { 'one': 1, 'two': 2, 'three': 3 };
-        localStorage.setItem('data', JSON.stringify(testObject) );
-        var retrievedObject = localStorage.getItem('val1');
+        // // var testObject = { 'one': 1, 'two': 2, 'three': 3 };
+        // localStorage.setItem('data', JSON.stringify(testObject) );
+        // var retrievedObject = localStorage.getItem('val1');
 
-        console.log('retrievedObject: ', JSON.parse(retrievedObject).two);
+        // console.log('retrievedObject: ', JSON.parse(retrievedObject).two);
         //
         if ( window.location.hash ) {
             if (window.location.hash === '#pl') {

@@ -70,7 +70,7 @@ var app = {
                 });
                 pos_marker.setMap(map)
                 var pos_marker_infowindow = new google.maps.InfoWindow({
-                    content: 'You are here'
+                    content: 'Tu jestem!'
                 });
                 pos_marker_infowindow.open(map, pos_marker);
                 var check_guide_class = setInterval(function(){
@@ -217,7 +217,7 @@ var app = {
             google.maps.event.addListener(marker, 'mouseover', (function(marker, i) {
                 return function() {
                 //Zmienia opacity, mouseleave - zeruje na default (0,4 opacity)
-                    console.log('this', this.opacity);
+                    // console.log('this', this.opacity);
                 }
             })(marker, i));
             google.maps.event.addListener(marker, 'click', (function(marker, i) {
@@ -228,7 +228,8 @@ var app = {
                     //
                     //rysowanie drogi
                     directionsDisplay.setMap(null);
-                    calcRoute(marker.getPosition().A, marker.getPosition().F);
+                    calcRoute(marker.getPosition().G, marker.getPosition().K);
+                    // console.log(marker.getPosition(), marker.getPosition().F);
                     directionsDisplay.setMap(map);
 
                     var pin_content = '<img class="pin_profile-pic" src='
@@ -237,7 +238,8 @@ var app = {
                     '<p class="pin_profile-name">'+
                     callback[i].user.username
                     +'</p>'
-                    +'<a href="'+callback[i].images.standard_resolution.url+'">link</a>';
+                    +'<a href="'+callback[i].images.standard_resolution.url+'">link</a><br>'
+                    +'<a href="http://instagram.com/'+callback[i].caption.from.username+'">Profil</a>';
 
                     infowindow.setContent(pin_content);
                     infowindow.open(map, marker);
